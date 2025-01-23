@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MiniBank.Domain\MiniBank.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
