@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiniBank.Domain.Entities.Roles
+namespace MiniBank.Domain.Entities.Accounts
 {
-    public class Permissions : EntityBase
-    {
+    public class AccountType : EntityBase
+    {  
         public string Name { get; set; }
+        public string Description { get; set; }
+
     }
 }

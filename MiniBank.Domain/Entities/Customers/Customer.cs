@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace MiniBank.Domain.Entities.Customers
 {
-    public class Customers : EntityBase
+    public class Customer : EntityBase
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string BirthDate { get; set; }  
-        public long PersonalNumber { get; set; }
-        public long MobileNumber { get; set; }
+        public string PersonalNumber { get; set; }
+        public string MobileNumber { get; set; }
     }
 }

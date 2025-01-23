@@ -11,5 +11,6 @@ namespace MiniBank.Domain.Interfaces
         Task SaveChangesAsync();
         Task BeginTransactionAsync();
         Task CommitTransactionAsync();
+        Task RollbackTransactionAsync();
     }
 }

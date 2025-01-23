@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MiniBank.Domain.Entities.Currencies
 {
-    public class Currencies : EntityBase
+    public class Currency : EntityBase
     {
         public string Code { get; set; }
         public string Name { get; set; }

@@ -1,6 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+using MiniBank.Domain.Interfaces;
+using MiniBank.Persistence;
+using MiniBank.Persistence.Database;
+using MiniBank.Persistence.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+ 
+builder.Services.AddDbContext<MiniBankDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -9,6 +20,11 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<MiniBankDbContext>();
+    dbContext.Database.Migrate();
+}
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
