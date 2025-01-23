@@ -1,0 +1,19 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/MiniBank.API/obj
+/MiniBank.Application/obj
+/MiniBank.Domain/obj
+/MiniBank.Infrastructure/obj
+/MiniBank.Persistence/obj
+/MiniBank.Shared/obj
+/MiniBank.Web/obj
+/MiniBank.API/bin/Debug/net8.0
+/MiniBank.Application/bin/Debug/net8.0
+/MiniBank.Domain/bin/Debug/net8.0
+/MiniBank.Persistence/bin/Debug/net8.0
+/MiniBank.Shared/bin/Debug/net8.0
+/MiniBank.Web/bin/Debug/net8.0
+/MiniBank.Infrastructure/bin/Debug/net8.0
