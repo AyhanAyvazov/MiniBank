@@ -6,8 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup> 
     <ProjectReference Include="..\MiniBank.Domain\MiniBank.Domain.csproj" />
+    <Folder Include="Repositories\" /> 
   </ItemGroup>
 
 </Project>
