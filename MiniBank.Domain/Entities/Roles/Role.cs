@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiniBank.Persistence
+namespace MiniBank.Domain.Entities.Roles
 {
-    public class MiniBankDbContext
+    public class Role : EntityBase
     {
+        public string Name { get; set; }
     }
 }

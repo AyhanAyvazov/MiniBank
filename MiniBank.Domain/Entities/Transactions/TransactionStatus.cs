@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiniBank.Domain.Entities.Accounts
+namespace MiniBank.Domain.Entities.Transactions
 {
-    public class AccountTypes : EntityBase
-    {  
+    public class TransactionStatus : EntityBase
+    {
         public string Name { get; set; }
-        public string Description { get; set; }
-
     }
 }

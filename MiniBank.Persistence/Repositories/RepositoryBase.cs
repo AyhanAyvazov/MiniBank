@@ -1,47 +1,47 @@
-﻿using MiniBank.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
+using MiniBank.Domain.Interfaces;
+using MiniBank.Persistence.Database; 
+using System.Linq.Expressions; 
 
 namespace MiniBank.Persistence.Repositories
 {
-    public class RepositoryBase<T> : IRepositoryBase<T> where T : class
+    public class RepositoryBase<T>(MiniBankDbContext context) : IRepositoryBase<T> where T : class
     {
-        public Task<T> AddASync(T entity)
+        public async Task<T> AddASync(T entity, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var result = await context.Set<T>().AddAsync(entity, default);
+            return result.Entity;
+
         }
 
-        public Task<T> DeleteAsync(T entity)
+        public void Delete(T entity, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            context.Set<T>().Remove(entity);
         }
 
-        public Task<IEnumerable<T>> GetAllAsync()
+        public async Task<T?> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return await context.Set<T>().FirstOrDefaultAsync(predicate, cancellationToken);
         }
 
-        public Task<IEnumerable<T>> GetByAsync(Func<T, bool> predicate)
+        public async Task<IEnumerable<T>> GetAllAsync(CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return await context.Set<T>().AsNoTracking().ToListAsync(cancellationToken);
         }
 
-        public Task<IEnumerable<T>> GetByAsync(Func<T, bool> predicate, int page, int pageSize)
+        public async Task<IEnumerable<T>> GetByAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return await context.Set<T>().AsNoTracking().Where(predicate).ToListAsync(cancellationToken);
         }
 
-        public Task<T> GetByIdAsync(int id)
+        public async Task<IEnumerable<T>> GetByAsync(Expression<Func<T, bool>> predicate, int page, int pageSize, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return await context.Set<T>().AsNoTracking().Where(predicate).Skip(page * pageSize).Take(pageSize).ToListAsync(cancellationToken);
         }
 
-        public Task<T> UpdateAsync(T entity)
+        public Task<T> UpdateAsync(T entity, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(context.Set<T>().Update(entity).Entity);
         }
     }
 }

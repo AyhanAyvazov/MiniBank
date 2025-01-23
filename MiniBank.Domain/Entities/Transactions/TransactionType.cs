@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MiniBank.Domain.Entities.Transactions
 {
-    public class TransactionStatuses : EntityBase
+    public class TransactionType : EntityBase
     {
         public string Name { get; set; }
     }
