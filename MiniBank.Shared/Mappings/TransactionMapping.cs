@@ -1,0 +1,37 @@
+﻿using MiniBank.Domain.Entities.Roles;
+using MiniBank.Domain.Entities.Transactions;
+using MiniBank.Shared.DTOs.Roles;
+using MiniBank.Shared.DTOs.Transactions;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MiniBank.Shared.Mappings
+{
+    public static class TransactionMapping
+    {
+        #region Insert Mapping
+
+        public static InsertTransactionDTO TranasactionsToInsertTransactionsDto(this Transaction transaction)
+        {
+            return new InsertTransactionDTO(transaction.DestinationAccountId, transaction.CurrencyId, transaction.TransactionTypeId, transaction.TransactionStatusId, transaction.Amount, transaction.TransactionExecuteTime);
+        }
+
+        public static Transaction InsertTranactionsDtoToEntity(this InsertTransactionDTO insertTransactionDto)
+        {
+            return new Transaction
+            {
+                DestinationAccountId = insertTransactionDto.destionationAccountId,
+                CurrencyId = insertTransactionDto.currencyId,
+                TransactionTypeId = insertTransactionDto.transactionTypeid,
+                TransactionStatusId = insertTransactionDto.transactionStatusId,
+                Amount = insertTransactionDto.amount,
+                TransactionExecuteTime = insertTransactionDto.transactionExecuteTime
+            };
+        }
+
+        #endregion
+    }
+}

@@ -29,7 +29,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MiniBank.Domain\MiniBank.Domain.csproj" />
+    <ProjectReference Include="..\MiniBank.Infrastructure\MiniBank.Infrastructure.csproj" />
     <ProjectReference Include="..\MiniBank.Persistence\MiniBank.Persistence.csproj" />
+    <ProjectReference Include="..\MiniBank.Shared\MiniBank.Shared.csproj" />
   </ItemGroup>
 
 </Project>

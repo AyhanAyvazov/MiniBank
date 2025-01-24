@@ -4,9 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiniBank.Infrastructure.Services
+namespace MiniBank.Shared.DTOs.Transactions
 {
-    internal class ServiceBase
-    {
-    }
+    public record InsertTransactionTypeDTO(string name);
 }

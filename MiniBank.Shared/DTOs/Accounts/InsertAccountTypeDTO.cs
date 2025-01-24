@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiniBank.Domain.Interfaces
+namespace MiniBank.Shared.DTOs.Accounts
 {
-    public interface IServiceBase
-    {
-    }
+    public record InsertAccountTypeDTO (string name, string description);
 }
+    
