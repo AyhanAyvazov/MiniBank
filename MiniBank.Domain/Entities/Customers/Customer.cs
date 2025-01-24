@@ -10,7 +10,7 @@ namespace MiniBank.Domain.Entities.Customers
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string BirthDate { get; set; }  
+        public DateTime BirthDate { get; set; }  
         public string PersonalNumber { get; set; }
         public string MobileNumber { get; set; }
     }

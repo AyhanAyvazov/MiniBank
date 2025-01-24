@@ -6,4 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="Mappings\AccountMapping.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MiniBank.Domain\MiniBank.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

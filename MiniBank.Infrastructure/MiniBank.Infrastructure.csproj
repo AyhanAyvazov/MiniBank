@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MiniBank.Persistence\MiniBank.Persistence.csproj" />
+    <ProjectReference Include="..\MiniBank.Shared\MiniBank.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
