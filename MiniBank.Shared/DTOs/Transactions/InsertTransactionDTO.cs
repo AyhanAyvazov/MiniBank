@@ -10,6 +10,6 @@ using System.Threading.Tasks;
 
 namespace MiniBank.Shared.DTOs.Transactions
 {
-    public record InsertTransactionDTO(int destionationAccountId, int currencyId, int transactionTypeid, int transactionStatusId, double amount, DateTime transactionExecuteTime);
+    public record InsertTransactionDTO(int sourceAccountId, int destionationAccountId, int currencyId, int transactionTypeid, int transactionStatusId, double amount, DateTime transactionExecuteTime);
 
 }

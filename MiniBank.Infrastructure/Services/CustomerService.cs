@@ -26,3 +26,4 @@ namespace MiniBank.Infrastructure.Services
         }
     }
 }
+    

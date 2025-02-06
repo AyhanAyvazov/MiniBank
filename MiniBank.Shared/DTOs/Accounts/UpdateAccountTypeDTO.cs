@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiniBank.Shared.DTOs.Currencies
+namespace MiniBank.Shared.DTOs.Accounts
 {
-    public record InsertCurrencyDTO(string Code, string Name, string Symbol);
+    public record UpdateAccountTypeDTO(string Name, string Description);
 
 }

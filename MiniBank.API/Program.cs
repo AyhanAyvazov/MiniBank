@@ -16,7 +16,20 @@ builder.Services.AddDbContext<MiniBankDbContext>(options =>
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>)); 
 
-builder.Services.AddScoped<ICustomerService, CustomerService>();    
+builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<IBalanceService, BalanceService>();
+builder.Services.AddScoped<ICurrencyService, CurrencyService>();
+builder.Services.AddScoped<IAccountTypeService, AccountTypeService>();
+builder.Services.AddScoped<IExchangeRateService, ExchangeRateService>();
+builder.Services.AddScoped<ITransactionService, TransactionService>();
+builder.Services.AddScoped<IPermissionService, PermissionService>();
+builder.Services.AddScoped<IRoleService, RoleService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IRolePermissionService, RolePermissionService>();
+builder.Services.AddScoped<ITransactionTypeService, TransactionTypeService>();
+builder.Services.AddScoped<ITransactionStatusService, TransactionStatusService>();
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
