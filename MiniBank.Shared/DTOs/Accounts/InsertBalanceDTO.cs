@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace MiniBank.Shared.DTOs.Accounts
 {
-    public record InsertBalanceDTO(int accountId, int currencyId, double amount);
+    public record InsertBalanceDTO(int AccountId, int CurrencyId, double Amount);
+
 
 }

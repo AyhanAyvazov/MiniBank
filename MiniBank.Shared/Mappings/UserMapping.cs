@@ -19,7 +19,7 @@ namespace MiniBank.Shared.Mappings
             return new InsertUserDTO(user.CustomerId, user.RoleId, user.UserName, user.HashedPassword, user.Mail);
         }
 
-        public static User ToEntity(this InsertUserDTO  insertUserDto)
+        public static User UserDtoToEntity(this InsertUserDTO  insertUserDto)
         {
             return new User
             {

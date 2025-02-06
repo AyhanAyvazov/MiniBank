@@ -13,22 +13,49 @@ namespace MiniBank.Shared.Mappings
     public static class CurrencyMapping
     {
         #region Insert Mapping
-
-        public static InsertCurrencyDTO CurrencyToInsertCurrencyDto(this Currency currency)
-        {
-            return new InsertCurrencyDTO(currency.Code, currency.Name, currency.Symbol);
-        }
-
-        public static Currency InsertCurrencyDtoToEntity(this InsertCurrencyDTO insertCurrencyDto)
+        public static Currency InsertDtoToCurrency(this InsertCurrencyDTO dto)
         {
             return new Currency
             {
-                Code = insertCurrencyDto.code,
-                Name = insertCurrencyDto.name,
-                Symbol = insertCurrencyDto.symbol
+                Code = dto.Code,
+                Name = dto.Name,
+                Symbol = dto.Symbol
             };
         }
 
+        public static InsertCurrencyDTO CurrencyToInsertDto(this Currency currency)
+        {
+            return new InsertCurrencyDTO(currency.Code, currency.Name, currency.Symbol);
+        }
+        #endregion
+
+        #region Update Mapping
+        public static UpdateCurrencyDTO CurrencyToUpdateDto(this Currency currency)
+        {
+            return new UpdateCurrencyDTO(currency.Code, currency.Name, currency.Symbol);
+        }
+
+        public static void UpdateCurrencyFromDto(this Currency existing, UpdateCurrencyDTO dto)
+        {
+            existing.Code = dto.Code;
+            existing.Name = dto.Name;
+            existing.Symbol = dto.Symbol;
+            existing.UpdatedDate = DateTime.Now;
+        }
+        #endregion
+
+        #region Get Mapping
+        public static GetCurrencyDTO CurrencyToGetDto(this Currency currency)
+        {
+            return new GetCurrencyDTO(
+                currency.Id,
+                currency.Code,
+                currency.Name,
+                currency.Symbol,
+                currency.CreatedDate,
+                currency.UpdatedDate
+            );
+        }
         #endregion
     }
 }

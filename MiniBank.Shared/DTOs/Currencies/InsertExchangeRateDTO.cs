@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace MiniBank.Shared.DTOs.Currencies
 {
-    public record InsertExchangeRateDTO(int fromCurrencyId, int toCurrencyId, double rate);
+    public record InsertExchangeRateDTO(int FromCurrencyId, int ToCurrencyId, double Rate);
+
 
 }

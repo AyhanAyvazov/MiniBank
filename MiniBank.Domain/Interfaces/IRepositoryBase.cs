@@ -12,7 +12,7 @@ namespace MiniBank.Domain.Interfaces
         Task<T> AddASync(T entity,CancellationToken cancellationToken);
         Task<T> UpdateAsync(T entity, CancellationToken cancellationToken);
         void Delete(T entity, CancellationToken cancellationToken); 
-        Task<IEnumerable<T>> GetAllAsync( CancellationToken cancellationToken);
+        Task<IEnumerable<T>> GetAllAsync(CancellationToken cancellationToken);
         Task<IEnumerable<T>> GetByAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken);
         Task<T?> FirstOrDefaultAsync(Expression<Func<T,bool>> predicate, CancellationToken cancellationToken);
         Task<IEnumerable<T>> GetByAsync(Expression<Func<T, bool>> predicate, int page, int pageSize, CancellationToken cancellationToken);

@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace MiniBank.Shared.DTOs.Currencies
 {
-    public record InsertCurrencyDTO(string Code, string Name, string Symbol);
-
+    public record UpdateCurrencyDTO(string Code, string Name, string Symbol);
 }
+
