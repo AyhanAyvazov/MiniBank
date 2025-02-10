@@ -41,7 +41,7 @@ namespace MiniBank.Shared.Mappings
 
         public static UpdateTransactionDTO TransactionUpdateAccountTypeDto(this Transaction transaction)
         {
-            return new UpdateTransactionDTO(transaction.TransactionStatusId);
+            return new UpdateTransactionDTO(transaction.Id,transaction.TransactionStatusId);
         }
 
         public static void UpdateTransactionFromDto(this Transaction existing, UpdateTransactionDTO dto)

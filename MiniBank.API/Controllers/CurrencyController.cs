@@ -1,12 +1,14 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MiniBank.API.Filters;
 using MiniBank.Shared.DTOs.Currencies;
 using MiniBank.Shared.Interfaces.IServices;
 
 namespace MiniBank.API.Controllers
 {
-    [ApiController]
     [Route("api/[controller]")]
+    [ServiceFilter(typeof(ValidationFilter))]
+    [ApiController]
     public class CurrencyController : ControllerBase
     {
         private readonly ICurrencyService _currencyService;

@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MiniBank.API.Filters;
 using MiniBank.Shared.DTOs.Users;
 using MiniBank.Shared.Interfaces.IServices;
 
 namespace MiniBank.API.Controllers
 {
     [Route("api/[controller]")]
+    [ServiceFilter(typeof(ValidationFilter))]
     [ApiController]
     public class UserController : ControllerBase
     {
