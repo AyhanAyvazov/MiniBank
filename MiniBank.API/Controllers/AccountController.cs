@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MiniBank.API.Filters;
 using MiniBank.Infrastructure.Services;
 using MiniBank.Shared.DTOs.Accounts;
 using MiniBank.Shared.DTOs.Customers;
@@ -8,6 +9,7 @@ using MiniBank.Shared.Interfaces.IServices;
 namespace MiniBank.API.Controllers
 {
     [Route("api/[controller]")]
+    [ServiceFilter(typeof(ValidationFilter))]
     [ApiController]
     public class AccountController : ControllerBase
     {

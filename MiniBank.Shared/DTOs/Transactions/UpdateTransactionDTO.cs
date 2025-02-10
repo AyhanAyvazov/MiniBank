@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace MiniBank.Shared.DTOs.Transactions
 {
-    public record UpdateTransactionDTO(int transactionStatusId);
+    public record UpdateTransactionDTO(int TransactionId, int transactionStatusId);
 
 }
